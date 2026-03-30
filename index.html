@@ -3,54 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Newsletter Innovation Lab – Archivio</title>
+  <title>Newsletter Innovation Lab – Home</title>
+
   <style>
     body {
       font-family: system-ui, sans-serif;
-      margin: 40px auto;
-      max-width: 800px;
-      padding: 0 20px;
+      margin: 0 auto;
+      max-width: 1400px;
+      padding: 40px 20px;
       color: #1a1a1a;
+      display: flex;
+      gap: 40px;
     }
+
+    .main { flex: 3; }
+    .sidebar { flex: 1; }
+
     h1 {
       color: #007B8A;
       margin-bottom: 20px;
-      text-align: center;
     }
-    .card {
+
+    /* iFrame container */
+    .embed-container {
+      border: 2px solid #007B8A;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 85vh;
+      background: #f4ffff;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Sidebar archivio */
+    .sidebar h3 {
+      margin-top: 0;
+      color: #007B8A;
+    }
+
+    .archive {
       border: 1px solid #d4e4e6;
       padding: 20px;
       border-radius: 10px;
-      margin-bottom: 20px;
       background: #f9fefe;
     }
-    .card a {
+
+    .archive a {
+      display: block;
+      margin-bottom: 12px;
       color: #007B8A;
       font-weight: bold;
       text-decoration: none;
     }
-    .card a:hover {
+
+    .archive a:hover {
       text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      body { flex-direction: column; }
+      .embed-container { height: 70vh; }
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Newsletter Innovation Lab</h1>
-  <p>Benvenuto nell’archivio ufficiale delle edizioni.</p>
+  <!-- COLONNA SINISTRA: ultima edizione embedded -->
+  <div class="main">
+    <h1>Ultima edizione</h1>
 
-  <div class="card">
-    <h2>Edizione 1 · Aprile 2026</h2>
-    <a href="./edizione-1/">Leggi la newsletter →</a>
+    <div class="embed-container">
+      <iframe src="./edizione-1/"></iframe>
+    </div>
   </div>
 
-  <!-- Quando avrai la seconda edizione aggiungi:
-  <div class="card">
-    <h2>Edizione 2 · Agosto 2026</h2>
-    <a href="./newsletter →</a>
+  <!-- COLONNA DESTRA: archivio -->
+  <div class="sidebar">
+    <h3>Archivio</h3>
+
+    <div class="archive">
+      <a href="./edizione-1/">Edizione 1 · Aprile 2026</a>
+      <!-- Aggiungi qui le prossimee-2/Edizione 2 · Agosto 2026</a> -->
+    </div>
   </div>
-  -->
 
 </body>
 </html>
